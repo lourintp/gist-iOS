@@ -61,7 +61,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>apiKey</key>
-	<string>b042d9f9cd9dd1d48704484ab93e8ad78de7dc0f</string>
+	<string></string>
 	<key>NSCameraUsageDescription</key>
 	<string>Permir ao app rastrear QRCode</string>
 	<key>urlRoot</key>
