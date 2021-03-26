@@ -30,6 +30,7 @@
 		2CFB234B260E536F002FA2BE /* GistResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB234A260E536F002FA2BE /* GistResponseModel.swift */; };
 		2CFB2351260E5447002FA2BE /* GistGetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2350260E5447002FA2BE /* GistGetRequest.swift */; };
 		2CFB2355260E54E4002FA2BE /* GistCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2354260E54E4002FA2BE /* GistCommentViewController.swift */; };
+		2CFB2359260E5854002FA2BE /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2358260E5854002FA2BE /* View.swift */; };
 		B1375CEC5FB652A6CF5F1D15 /* Pods_GistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB30D5DB9CF91BEA938902E /* Pods_GistTests.framework */; };
 		E62751BA960913D62162DACE /* Pods_Gist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E1C0FB2F5C80EFA247674B /* Pods_Gist.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		2CFB234A260E536F002FA2BE /* GistResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseModel.swift; sourceTree = "<group>"; };
 		2CFB2350260E5447002FA2BE /* GistGetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistGetRequest.swift; sourceTree = "<group>"; };
 		2CFB2354260E54E4002FA2BE /* GistCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentViewController.swift; sourceTree = "<group>"; };
+		2CFB2358260E5854002FA2BE /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		30AAC698DE274EE35BE47C55 /* Pods-GistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GistTests.release.xcconfig"; path = "Target Support Files/Pods-GistTests/Pods-GistTests.release.xcconfig"; sourceTree = "<group>"; };
 		3413EB434EA0F96FF048DF40 /* Pods-Gist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gist.debug.xcconfig"; path = "Target Support Files/Pods-Gist/Pods-Gist.debug.xcconfig"; sourceTree = "<group>"; };
 		73A6ADEC781AA86105450BCF /* Pods-Gist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gist.release.xcconfig"; path = "Target Support Files/Pods-Gist/Pods-Gist.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				2CFB22EC260D3AE0002FA2BE /* Date.swift */,
 				2CFB2302260E30CD002FA2BE /* Application.swift */,
 				2CFB231C260E347B002FA2BE /* Thread.swift */,
+				2CFB2358260E5854002FA2BE /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				2CFB22E1260D3902002FA2BE /* APIClient.swift in Sources */,
 				2C4B81D72415904F0064B765 /* ViewController.swift in Sources */,
 				2CFB22F7260E3014002FA2BE /* APIResponse.swift in Sources */,
+				2CFB2359260E5854002FA2BE /* View.swift in Sources */,
 				2CFB2355260E54E4002FA2BE /* GistCommentViewController.swift in Sources */,
 				2CFB2335260E4352002FA2BE /* GistCommentService.swift in Sources */,
 				2C4B81D32415904F0064B765 /* AppDelegate.swift in Sources */,
