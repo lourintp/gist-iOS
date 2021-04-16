@@ -1,22 +1,22 @@
 //
-//  GistCommentService.swift
+//  GistGetService.swift
 //  Gist
 //
-//  Created by Thiago Lourin on 26/03/21.
+//  Created by Thiago Lourin on 16/04/21.
 //  Copyright © 2021 Lourin. All rights reserved.
 //
 
 import Foundation
 
-public class GistCommentService {
+public final class GistGetService: BaseServiceProtocol {
     
-    private let request: GistCommentRequestModel
+    private let request: GistGetRequest
     
-    init(request: GistCommentRequestModel) {
+    init(request: GistGetRequest) {
         self.request = request
     }
     
-    public func performRequest() {
+    func performRequest() {
         APIInstance.get().request(request) { (response) in
             print(response)
         }

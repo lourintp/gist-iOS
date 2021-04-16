@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QRCodeReaderViewController.swift
 //  Gist
 //
 //  Created by Thiago Lourin on 08/03/20.
@@ -18,38 +18,6 @@ class QRCodeReaderViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.black
-        setupCapture()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if (captureSession?.isRunning == false) {
-            captureSession.startRunning()
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
-        }
-    }
-    
-    private func found(code: String) {
-        GistGetService(request: GistGetRequest(gistId: code)).performRequest()        
-    }
-    
-    private func failed() {
-        let ac = UIAlertController(title: "Scanning não suportado", message: "Seu device não suporta este tipo de ação. Utilize um device com suporte à câmera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        captureSession = nil
-    }
-
-}
-
-extension QRCodeReaderViewController {
-    private func setupCapture() {
         captureSession = AVCaptureSession()
 
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -87,6 +55,32 @@ extension QRCodeReaderViewController {
 
         captureSession.startRunning()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+    }
+    
+    func found(code: String) {
+        GistGetService(request: GistGetRequest(gistId: code)).performRequest()        
+    }
+    
+    func failed() {
+        let ac = UIAlertController(title: "Scanning não suportado", message: "Seu device não suporta este tipo de ação. Utilize um device com suporte à câmera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
+    }
+
 }
 
 extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
