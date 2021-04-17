@@ -13,11 +13,32 @@ class QRCodeReaderViewController: UIViewController {
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-
+    private var viewModel: GistCommentViewModel?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.black
+        viewModel = GistCommentViewModel()
+        viewModel?.fetchGistFrom(id: "2710948")
+        //setupCaptureSession()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (captureSession?.isRunning == false) {
+            captureSession.startRunning()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
+    }
+    
+    private func setupCaptureSession() {
         captureSession = AVCaptureSession()
 
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -56,25 +77,11 @@ class QRCodeReaderViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if (captureSession?.isRunning == false) {
-            captureSession.startRunning()
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        if (captureSession?.isRunning == true) {
-            captureSession.stopRunning()
-        }
-    }
-    
-    func found(code: String) {
+    private func found(code: String) {
         GistGetService(request: GistGetRequest(gistId: code)).performRequest()        
     }
     
-    func failed() {
+    private func failed() {
         let ac = UIAlertController(title: "Scanning não suportado", message: "Seu device não suporta este tipo de ação. Utilize um device com suporte à câmera.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)

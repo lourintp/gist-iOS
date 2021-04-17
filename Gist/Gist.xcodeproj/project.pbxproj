@@ -15,6 +15,7 @@
 		2C4B81EA241590510064B765 /* GistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B81E9241590510064B765 /* GistTests.swift */; };
 		2CC6DFE9262A48F300406C3C /* GistGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFE8262A48F300406C3C /* GistGetService.swift */; };
 		2CC6DFED262A495200406C3C /* BaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFEC262A495100406C3C /* BaseServiceProtocol.swift */; };
+		2CC6DFF5262A522D00406C3C /* GistCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */; };
 		2CFB22E1260D3902002FA2BE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22E0260D3902002FA2BE /* APIClient.swift */; };
 		2CFB22E6260D39CD002FA2BE /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22E5260D39CD002FA2BE /* ErrorResponse.swift */; };
 		2CFB22ED260D3AE0002FA2BE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22EC260D3AE0002FA2BE /* Date.swift */; };
@@ -61,6 +62,7 @@
 		2C4B81EB241590510064B765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC6DFE8262A48F300406C3C /* GistGetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistGetService.swift; sourceTree = "<group>"; };
 		2CC6DFEC262A495100406C3C /* BaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceProtocol.swift; sourceTree = "<group>"; };
+		2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentViewModel.swift; sourceTree = "<group>"; };
 		2CFB22E0260D3902002FA2BE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		2CFB22E5260D39CD002FA2BE /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		2CFB22EC260D3AE0002FA2BE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 		2CFB2348260E524C002FA2BE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				2CFB2335260E4352002FA2BE /* GistCommentService.swift in Sources */,
 				2C4B81D32415904F0064B765 /* AppDelegate.swift in Sources */,
 				2CFB2339260E43A4002FA2BE /* GistCommentRequestModel.swift in Sources */,
+				2CC6DFF5262A522D00406C3C /* GistCommentViewModel.swift in Sources */,
 				2CFB2324260E382B002FA2BE /* APIClientMock.swift in Sources */,
 				2CFB234B260E536F002FA2BE /* GistResponseModel.swift in Sources */,
 				2CFB231D260E347B002FA2BE /* Thread.swift in Sources */,
