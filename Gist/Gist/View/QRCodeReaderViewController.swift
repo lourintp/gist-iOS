@@ -19,9 +19,10 @@ class QRCodeReaderViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.black
-        viewModel = GistCommentViewModel()
-        viewModel?.fetchGistFrom(id: "2710948")
+//        viewModel = GistCommentViewModel()
+//        viewModel?.fetchGistFrom(id: "2710948")
         //setupCaptureSession()
+        found(code: "2710948")
     }
     
     override func viewWillAppear(_ animated: Bool) {

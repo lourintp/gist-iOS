@@ -67,7 +67,10 @@ class APIClient: APIClientProtocol {
         requestData.addValue("application/json", forHTTPHeaderField: "Content-Type")
         requestData.addValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
         requestData.addValue("Bearer \(UIApplication.secretClientId)", forHTTPHeaderField: "Authorization")
-        requestData.httpBody = try toData(request)
+        
+        if (request.method != .get) {
+            requestData.httpBody = try toData(request)
+        }
         
         return requestData
     }
