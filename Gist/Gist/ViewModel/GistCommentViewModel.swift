@@ -8,15 +8,19 @@
 
 import Foundation
 
-protocol GistCommentViewModelDelegate: class {
-    func didLoadGist(response: GistResponseModel?)
-    func errorLoadingGist(error: ErrorResponse?)
+public protocol GistCommentViewModelDelegate: class {
+    func didLoadGist()
+    func errorLoadingGist()
+    func didSendComment()
+    func errorSendingComment(_ error: String)
 }
 
-struct GistCommentViewModel {
+internal final class GistCommentViewModel {
     
     private var apiClient: APIClientProtocol
     weak var gistLoadDelegate: GistCommentViewModelDelegate?
+    internal var gist: GistResponseModel?
+    internal var error: ErrorResponse?
     
     init() {
         self.apiClient = APIInstance.get()
@@ -27,11 +31,35 @@ struct GistCommentViewModel {
         apiClient.request(request) { (result) in
             switch result {
             case .success(let response):
-                self.gistLoadDelegate?.didLoadGist(response: response as? GistResponseModel)
+                self.gist = response as? GistResponseModel
+                self.gistLoadDelegate?.didLoadGist()
                 break
             case .failure(let errorResponse):
-                self.gistLoadDelegate?.errorLoadingGist(error: errorResponse)
+                self.error = errorResponse
+                self.gistLoadDelegate?.errorLoadingGist()
                 break
+            }
+        }
+    }
+    
+    func sendComment(_ id: String, _ comment: String) {
+        if (comment.isEmpty) {
+            self.gistLoadDelegate?.errorSendingComment("Comment must be filled!")
+            return
+        }
+        
+        let request = GistCommentRequestModel(gistID: id, comment: comment)
+        apiClient.request(request) { (result) in
+            switch result {
+            case .success(let response):
+                if let gistResponseModel = response as? GistCommentResponseModel {
+                    print(gistResponseModel)
+                    self.gistLoadDelegate?.didSendComment()
+                    return
+                }
+                self.gistLoadDelegate?.errorSendingComment("Unknown error sending comment.")
+            case .failure(let error):
+                self.gistLoadDelegate?.errorSendingComment(error?.error ?? "Unknown error sending comment.")
             }
         }
     }

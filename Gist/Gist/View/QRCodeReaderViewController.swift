@@ -13,16 +13,11 @@ class QRCodeReaderViewController: UIViewController {
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
-    private var viewModel: GistCommentViewModel?
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.black
-//        viewModel = GistCommentViewModel()
-//        viewModel?.fetchGistFrom(id: "2710948")
-        //setupCaptureSession()
-        found(code: "2710948")
+                
+        goToGistCommentVCWith(code: "2710948")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,8 +73,10 @@ class QRCodeReaderViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    private func found(code: String) {
-        GistGetService(request: GistGetRequest(gistId: code)).performRequest()        
+    private func goToGistCommentVCWith(code: String) {
+        let vc = GistCommentViewController()
+        vc.code = code
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func failed() {
@@ -96,10 +93,10 @@ extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
         captureSession.stopRunning()
 
          if let metadataObject = metadataObjects.first {
-             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-             guard let stringValue = readableObject.stringValue else { return }
-             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-             found(code: stringValue)
+            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            goToGistCommentVCWith(code: stringValue)
          }
 
          dismiss(animated: true)
