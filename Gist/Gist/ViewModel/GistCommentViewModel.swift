@@ -15,15 +15,16 @@ public protocol GistCommentViewModelDelegate: class {
     func errorSendingComment(_ error: String)
 }
 
-internal final class GistCommentViewModel {
+public final class GistCommentViewModel {
     
     private var apiClient: APIClientProtocol
     weak var gistLoadDelegate: GistCommentViewModelDelegate?
     internal var gist: GistResponseModel?
+    internal var gistCommentResponse: GistCommentResponseModel?
     internal var error: ErrorResponse?
     
-    init() {
-        self.apiClient = APIInstance.get()
+    init(apiClient: APIClientProtocol) {
+        self.apiClient = apiClient
     }
     
     func fetchGistFrom(id: String) {
@@ -54,6 +55,7 @@ internal final class GistCommentViewModel {
             case .success(let response):
                 if let gistResponseModel = response as? GistCommentResponseModel {
                     print(gistResponseModel)
+                    self.gistCommentResponse = gistResponseModel
                     self.gistLoadDelegate?.didSendComment()
                     return
                 }

@@ -23,7 +23,7 @@ struct GistCommentRequestModel: APIRequest {
     }
     
     var mockPath: String {
-        return ""
+        return "GistCommentResponse"
     }
     
     var method: HTTPMethod {

@@ -1,0 +1,63 @@
+{
+    "url": "https://api.github.com/gists/2710948",
+    "forks_url": "https://api.github.com/gists/2710948/forks",
+    "commits_url": "https://api.github.com/gists/2710948/commits",
+    "id": "2710948",
+    "node_id": "MDQ6R2lzdDI3MTA5NDg=",
+    "git_pull_url": "https://gist.github.com/2710948.git",
+    "git_push_url": "https://gist.github.com/2710948.git",
+    "html_url": "https://gist.github.com/2710948",
+    "files": {
+        "Waiting for Comments": {
+            "filename": "Waiting for Comments",
+            "type": "text/plain",
+            "language": null,
+            "raw_url": "https://gist.githubusercontent.com/marktabler/2710948/raw/be72432c7a220f9d5f077ab3006508bd0e23bbd0/Waiting%20for%20Comments",
+            "size": 23,
+            "truncated": false,
+            "content": "Somebody say something!"
+        }
+    },
+    "public": true,
+    "created_at": "2012-05-16T14:53:21Z",
+    "updated_at": "2021-03-26T16:51:11Z",
+    "description": "Sample Gist",
+    "comments": 20,
+    "user": null,
+    "comments_url": "https://api.github.com/gists/2710948/comments",
+    "owner": {
+        "login": "marktabler",
+        "id": 390194,
+        "node_id": "MDQ6VXNlcjM5MDE5NA==",
+        "avatar_url": "https://avatars.githubusercontent.com/u/390194?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/marktabler",
+        "html_url": "https://github.com/marktabler",
+        "followers_url": "https://api.github.com/users/marktabler/followers",
+        "following_url": "https://api.github.com/users/marktabler/following{/other_user}",
+        "gists_url": "https://api.github.com/users/marktabler/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/marktabler/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/marktabler/subscriptions",
+        "organizations_url": "https://api.github.com/users/marktabler/orgs",
+        "repos_url": "https://api.github.com/users/marktabler/repos",
+        "events_url": "https://api.github.com/users/marktabler/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/marktabler/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    "forks": [],
+    "history": [
+        {
+            "user": null,
+            "version": "539ab7665550421b26f67cc8af6e89c7d05ea9b2",
+            "committed_at": "2012-05-16T14:53:22Z",
+            "change_status": {
+                "total": 1,
+                "additions": 1,
+                "deletions": 0
+            },
+            "url": "https://api.github.com/gists/2710948/539ab7665550421b26f67cc8af6e89c7d05ea9b2"
+        }
+    ],
+    "truncated": false
+}

@@ -21,7 +21,7 @@ struct GistGetRequest: APIRequest {
     }
     
     var mockPath: String {
-        return ""
+        return "GistResponse"
     }
     
     var method: HTTPMethod {

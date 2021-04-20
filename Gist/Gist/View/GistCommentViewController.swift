@@ -22,11 +22,13 @@ class GistCommentViewController: UIViewController {
     var viewModel: GistCommentViewModel?
             
     override func viewDidLoad() {
-        viewModel = GistCommentViewModel()
+        viewModel = GistCommentViewModel(apiClient: APIClient.shared)
         viewModel?.gistLoadDelegate = self
         
         view.backgroundColor = .clear
         containerView.backgroundColor = .white
+        activityIndicator.hidesWhenStopped = true
+        
         setupView()
         setupButton()
         setupCommentView()
@@ -38,7 +40,6 @@ class GistCommentViewController: UIViewController {
         
         guard let code = code else { return }
         viewModel?.fetchGistFrom(id: code)
-        activityIndicator.hidesWhenStopped = true
     }
     
     private func setupButton() {
@@ -112,6 +113,16 @@ class GistCommentViewController: UIViewController {
         }
         activityIndicator.startAnimating()
     }
+    
+    private func presentAlert(message: String) {
+        let ac = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        let submitAction = UIAlertAction(title: "Ok", style: .default) { [unowned ac] _ in
+            ac.dismiss(animated: true)
+        }
+
+        ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
 }
 
 extension GistCommentViewController: GistCommentViewModelDelegate {
@@ -129,15 +140,16 @@ extension GistCommentViewController: GistCommentViewModelDelegate {
     
     func errorLoadingGist() {
         setupActivityIndicator()
+        presentAlert(message: "Error loading gist!")
     }
     
     func didSendComment() {
-        print("Comment successfull!")
         setupActivityIndicator()
+        presentAlert(message: "Comment successfully sent!")
     }
     
     func errorSendingComment(_ error: String) {
-        print(error)
         setupActivityIndicator()
+        presentAlert(message: error)
     }
 }

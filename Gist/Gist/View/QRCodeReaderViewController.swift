@@ -16,11 +16,16 @@ class QRCodeReaderViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        goToGistCommentVCWith(code: "2710948")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        #if targetEnvironment(simulator)
+            promptForAnswer() /// Mark: example of gist id - 2710948
+        #else
+            setupCaptureSession()
+        #endif
+        
         if (captureSession?.isRunning == false) {
             captureSession.startRunning()
         }
@@ -80,12 +85,26 @@ class QRCodeReaderViewController: UIViewController {
     }
     
     private func failed() {
-        let ac = UIAlertController(title: "Scanning não suportado", message: "Seu device não suporta este tipo de ação. Utilize um device com suporte à câmera.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device doesn't have support to camera.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
         captureSession = nil
     }
 
+    private func promptForAnswer() {
+        let ac = UIAlertController(title: "Type a valid gist id", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned ac, self] _ in
+            let answer = ac.textFields![0]
+            self.goToGistCommentVCWith(code: answer.text ?? "")
+        }
+
+        ac.addAction(submitAction)
+
+        present(ac, animated: true)
+    }
+    
 }
 
 extension QRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {

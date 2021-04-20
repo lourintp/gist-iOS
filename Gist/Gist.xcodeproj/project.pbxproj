@@ -13,8 +13,11 @@
 		2C4B81DC241590510064B765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B81DB241590510064B765 /* Assets.xcassets */; };
 		2C4B81DF241590510064B765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B81DD241590510064B765 /* LaunchScreen.storyboard */; };
 		2C4B81EA241590510064B765 /* GistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B81E9241590510064B765 /* GistTests.swift */; };
-		2CC6DFE9262A48F300406C3C /* GistGetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFE8262A48F300406C3C /* GistGetService.swift */; };
-		2CC6DFED262A495200406C3C /* BaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFEC262A495100406C3C /* BaseServiceProtocol.swift */; };
+		2C5D005F262F01FD002AF055 /* GistResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D005E262F01FD002AF055 /* GistResponse.json */; };
+		2C5D0065262F0219002AF055 /* GistCommentResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D0064262F0219002AF055 /* GistCommentResponse.json */; };
+		2C5D007B262F1018002AF055 /* GistCommentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D007A262F1018002AF055 /* GistCommentViewModelTests.swift */; };
+		2C95ED69262E38920028A669 /* GistParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C95ED68262E38920028A669 /* GistParsingTests.swift */; };
+		2C95ED6D262E38B40028A669 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C95ED6C262E38B40028A669 /* APIClientMock.swift */; };
 		2CC6DFF5262A522D00406C3C /* GistCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */; };
 		2CFB22E1260D3902002FA2BE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22E0260D3902002FA2BE /* APIClient.swift */; };
 		2CFB22E6260D39CD002FA2BE /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22E5260D39CD002FA2BE /* ErrorResponse.swift */; };
@@ -24,10 +27,7 @@
 		2CFB22FB260E303C002FA2BE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22FA260E303C002FA2BE /* Result.swift */; };
 		2CFB22FF260E3073002FA2BE /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB22FE260E3073002FA2BE /* DataContainer.swift */; };
 		2CFB2303260E30CD002FA2BE /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2302260E30CD002FA2BE /* Application.swift */; };
-		2CFB2319260E33A0002FA2BE /* APIInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2318260E33A0002FA2BE /* APIInstance.swift */; };
 		2CFB231D260E347B002FA2BE /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB231C260E347B002FA2BE /* Thread.swift */; };
-		2CFB2324260E382B002FA2BE /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2320260E34BB002FA2BE /* APIClientMock.swift */; };
-		2CFB2335260E4352002FA2BE /* GistCommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2334260E4352002FA2BE /* GistCommentService.swift */; };
 		2CFB2339260E43A4002FA2BE /* GistCommentRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB2338260E43A4002FA2BE /* GistCommentRequestModel.swift */; };
 		2CFB233D260E43C3002FA2BE /* GistCommentResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB233C260E43C3002FA2BE /* GistCommentResponseModel.swift */; };
 		2CFB234B260E536F002FA2BE /* GistResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFB234A260E536F002FA2BE /* GistResponseModel.swift */; };
@@ -60,8 +60,11 @@
 		2C4B81E5241590510064B765 /* GistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4B81E9241590510064B765 /* GistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistTests.swift; sourceTree = "<group>"; };
 		2C4B81EB241590510064B765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CC6DFE8262A48F300406C3C /* GistGetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistGetService.swift; sourceTree = "<group>"; };
-		2CC6DFEC262A495100406C3C /* BaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseServiceProtocol.swift; sourceTree = "<group>"; };
+		2C5D005E262F01FD002AF055 /* GistResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GistResponse.json; sourceTree = "<group>"; };
+		2C5D0064262F0219002AF055 /* GistCommentResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GistCommentResponse.json; sourceTree = "<group>"; };
+		2C5D007A262F1018002AF055 /* GistCommentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentViewModelTests.swift; sourceTree = "<group>"; };
+		2C95ED68262E38920028A669 /* GistParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistParsingTests.swift; sourceTree = "<group>"; };
+		2C95ED6C262E38B40028A669 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentViewModel.swift; sourceTree = "<group>"; };
 		2CFB22E0260D3902002FA2BE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		2CFB22E5260D39CD002FA2BE /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
@@ -71,10 +74,7 @@
 		2CFB22FA260E303C002FA2BE /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2CFB22FE260E3073002FA2BE /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		2CFB2302260E30CD002FA2BE /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		2CFB2318260E33A0002FA2BE /* APIInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInstance.swift; sourceTree = "<group>"; };
 		2CFB231C260E347B002FA2BE /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
-		2CFB2320260E34BB002FA2BE /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
-		2CFB2334260E4352002FA2BE /* GistCommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentService.swift; sourceTree = "<group>"; };
 		2CFB2338260E43A4002FA2BE /* GistCommentRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentRequestModel.swift; sourceTree = "<group>"; };
 		2CFB233C260E43C3002FA2BE /* GistCommentResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentResponseModel.swift; sourceTree = "<group>"; };
 		2CFB234A260E536F002FA2BE /* GistResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseModel.swift; sourceTree = "<group>"; };
@@ -147,20 +147,30 @@
 		2C4B81E8241590510064B765 /* GistTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C5D005D262F016B002AF055 /* JSON */,
 				2C4B81E9241590510064B765 /* GistTests.swift */,
 				2C4B81EB241590510064B765 /* Info.plist */,
+				2C95ED68262E38920028A669 /* GistParsingTests.swift */,
+				2C95ED6C262E38B40028A669 /* APIClientMock.swift */,
+				2C5D007A262F1018002AF055 /* GistCommentViewModelTests.swift */,
 			);
 			path = GistTests;
+			sourceTree = "<group>";
+		};
+		2C5D005D262F016B002AF055 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2C5D005E262F01FD002AF055 /* GistResponse.json */,
+				2C5D0064262F0219002AF055 /* GistCommentResponse.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		2CFB22DF260D38ED002FA2BE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2CFB2311260E3312002FA2BE /* Service */,
-				2CFB2320260E34BB002FA2BE /* APIClientMock.swift */,
 				2CFB22E0260D3902002FA2BE /* APIClient.swift */,
 				2CFB22FE260E3073002FA2BE /* DataContainer.swift */,
-				2CFB2318260E33A0002FA2BE /* APIInstance.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -195,16 +205,6 @@
 				2CFB22FA260E303C002FA2BE /* Result.swift */,
 			);
 			path = NetworkModels;
-			sourceTree = "<group>";
-		};
-		2CFB2311260E3312002FA2BE /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				2CFB2334260E4352002FA2BE /* GistCommentService.swift */,
-				2CC6DFE8262A48F300406C3C /* GistGetService.swift */,
-				2CC6DFEC262A495100406C3C /* BaseServiceProtocol.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		2CFB2348260E524C002FA2BE /* ViewModel */ = {
@@ -357,6 +357,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5D0065262F0219002AF055 /* GistCommentResponse.json in Resources */,
+				2C5D005F262F01FD002AF055 /* GistResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,23 +437,18 @@
 				2CFB233D260E43C3002FA2BE /* GistCommentResponseModel.swift in Sources */,
 				2CFB22FF260E3073002FA2BE /* DataContainer.swift in Sources */,
 				2CFB2351260E5447002FA2BE /* GistGetRequest.swift in Sources */,
-				2CC6DFE9262A48F300406C3C /* GistGetService.swift in Sources */,
 				2CFB2303260E30CD002FA2BE /* Application.swift in Sources */,
 				2CFB22E6260D39CD002FA2BE /* ErrorResponse.swift in Sources */,
 				2CFB22F3260E3004002FA2BE /* APIRequest.swift in Sources */,
 				2CFB22ED260D3AE0002FA2BE /* Date.swift in Sources */,
-				2CFB2319260E33A0002FA2BE /* APIInstance.swift in Sources */,
 				2CFB22E1260D3902002FA2BE /* APIClient.swift in Sources */,
 				2C4B81D72415904F0064B765 /* QRCodeReaderViewController.swift in Sources */,
 				2CFB22F7260E3014002FA2BE /* APIResponse.swift in Sources */,
 				2CFB2359260E5854002FA2BE /* View.swift in Sources */,
-				2CC6DFED262A495200406C3C /* BaseServiceProtocol.swift in Sources */,
 				2CFB2355260E54E4002FA2BE /* GistCommentViewController.swift in Sources */,
-				2CFB2335260E4352002FA2BE /* GistCommentService.swift in Sources */,
 				2C4B81D32415904F0064B765 /* AppDelegate.swift in Sources */,
 				2CFB2339260E43A4002FA2BE /* GistCommentRequestModel.swift in Sources */,
 				2CC6DFF5262A522D00406C3C /* GistCommentViewModel.swift in Sources */,
-				2CFB2324260E382B002FA2BE /* APIClientMock.swift in Sources */,
 				2CFB234B260E536F002FA2BE /* GistResponseModel.swift in Sources */,
 				2CFB231D260E347B002FA2BE /* Thread.swift in Sources */,
 			);
@@ -461,7 +458,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C95ED6D262E38B40028A669 /* APIClientMock.swift in Sources */,
 				2C4B81EA241590510064B765 /* GistTests.swift in Sources */,
+				2C95ED69262E38920028A669 /* GistParsingTests.swift in Sources */,
+				2C5D007B262F1018002AF055 /* GistCommentViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

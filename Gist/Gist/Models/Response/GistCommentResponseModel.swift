@@ -14,7 +14,7 @@ struct GistCommentResponseModel: APIResponse {
     let nodeID: String
     let user: User
     let authorAssociation: String
-    let createdAt, updatedAt: Date
+    let createdAt, updatedAt: String
     let body: String
 
     enum CodingKeys: String, CodingKey {
