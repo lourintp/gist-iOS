@@ -12,10 +12,10 @@
 		2C4B81DA2415904F0064B765 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B81D82415904F0064B765 /* Main.storyboard */; };
 		2C4B81DC241590510064B765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B81DB241590510064B765 /* Assets.xcassets */; };
 		2C4B81DF241590510064B765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4B81DD241590510064B765 /* LaunchScreen.storyboard */; };
-		2C4B81EA241590510064B765 /* GistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4B81E9241590510064B765 /* GistTests.swift */; };
 		2C5D005F262F01FD002AF055 /* GistResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D005E262F01FD002AF055 /* GistResponse.json */; };
 		2C5D0065262F0219002AF055 /* GistCommentResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C5D0064262F0219002AF055 /* GistCommentResponse.json */; };
 		2C5D007B262F1018002AF055 /* GistCommentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D007A262F1018002AF055 /* GistCommentViewModelTests.swift */; };
+		2C5D008C262F4651002AF055 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5D008B262F4651002AF055 /* String.swift */; };
 		2C95ED69262E38920028A669 /* GistParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C95ED68262E38920028A669 /* GistParsingTests.swift */; };
 		2C95ED6D262E38B40028A669 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C95ED6C262E38B40028A669 /* APIClientMock.swift */; };
 		2CC6DFF5262A522D00406C3C /* GistCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */; };
@@ -58,11 +58,11 @@
 		2C4B81DE241590510064B765 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C4B81E0241590510064B765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C4B81E5241590510064B765 /* GistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C4B81E9241590510064B765 /* GistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistTests.swift; sourceTree = "<group>"; };
 		2C4B81EB241590510064B765 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C5D005E262F01FD002AF055 /* GistResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GistResponse.json; sourceTree = "<group>"; };
 		2C5D0064262F0219002AF055 /* GistCommentResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GistCommentResponse.json; sourceTree = "<group>"; };
 		2C5D007A262F1018002AF055 /* GistCommentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentViewModelTests.swift; sourceTree = "<group>"; };
+		2C5D008B262F4651002AF055 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		2C95ED68262E38920028A669 /* GistParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistParsingTests.swift; sourceTree = "<group>"; };
 		2C95ED6C262E38B40028A669 /* APIClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		2CC6DFF4262A522D00406C3C /* GistCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCommentViewModel.swift; sourceTree = "<group>"; };
@@ -148,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				2C5D005D262F016B002AF055 /* JSON */,
-				2C4B81E9241590510064B765 /* GistTests.swift */,
 				2C4B81EB241590510064B765 /* Info.plist */,
 				2C95ED68262E38920028A669 /* GistParsingTests.swift */,
 				2C95ED6C262E38B40028A669 /* APIClientMock.swift */,
@@ -192,6 +191,7 @@
 				2CFB2302260E30CD002FA2BE /* Application.swift */,
 				2CFB231C260E347B002FA2BE /* Thread.swift */,
 				2CFB2358260E5854002FA2BE /* View.swift */,
+				2C5D008B262F4651002AF055 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C5D008C262F4651002AF055 /* String.swift in Sources */,
 				2CFB22FB260E303C002FA2BE /* Result.swift in Sources */,
 				2CFB233D260E43C3002FA2BE /* GistCommentResponseModel.swift in Sources */,
 				2CFB22FF260E3073002FA2BE /* DataContainer.swift in Sources */,
@@ -459,7 +460,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C95ED6D262E38B40028A669 /* APIClientMock.swift in Sources */,
-				2C4B81EA241590510064B765 /* GistTests.swift in Sources */,
 				2C95ED69262E38920028A669 /* GistParsingTests.swift in Sources */,
 				2C5D007B262F1018002AF055 /* GistCommentViewModelTests.swift in Sources */,
 			);

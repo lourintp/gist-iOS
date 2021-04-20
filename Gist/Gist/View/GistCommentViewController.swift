@@ -1,11 +1,3 @@
-//
-//  GistCommentViewController.swift
-//  Gist
-//
-//  Created by Thiago Lourin on 26/03/21.
-//  Copyright © 2021 Lourin. All rights reserved.
-//
-
 import UIKit
 
 class GistCommentViewController: UIViewController {
@@ -14,6 +6,7 @@ class GistCommentViewController: UIViewController {
     private var labelUser = UILabel()
     private var link = UILabel()
     private var labelCreatedAt = UILabel()
+    private var labelComment = UILabel()
     private var textComment = UITextField()
     private var sendButton = UIButton()
     private var activityIndicator = UIActivityIndicatorView()
@@ -38,6 +31,7 @@ class GistCommentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.isNavigationBarHidden = false
         guard let code = code else { return }
         viewModel?.fetchGistFrom(id: code)
     }
@@ -79,7 +73,8 @@ class GistCommentViewController: UIViewController {
                      link,
                      labelCreatedAt,
                      textComment,
-                     sendButton], constraints: true)
+                     sendButton,
+                     labelComment], constraints: true)
         
         NSLayoutConstraint.activate([            
             labelUser.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 16),
@@ -98,7 +93,10 @@ class GistCommentViewController: UIViewController {
             sendButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             sendButton.topAnchor.constraint(equalTo: textComment.bottomAnchor, constant: 16),
             sendButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            sendButton.heightAnchor.constraint(equalToConstant: 40)
+            sendButton.heightAnchor.constraint(equalToConstant: 40),
+            labelComment.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
+            labelComment.topAnchor.constraint(equalTo: sendButton.bottomAnchor, constant: 16),
+            labelComment.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16)
         ])
     }
     
@@ -112,6 +110,15 @@ class GistCommentViewController: UIViewController {
             return
         }
         activityIndicator.startAnimating()
+    }
+    
+    private func setupLabelComment(_ comment: String?) {
+        guard let comment = comment else { return }
+        
+        textComment.text = ""
+        labelComment.numberOfLines = 0
+        
+        labelComment.text = "Your comment was: \(comment)"
     }
     
     private func presentAlert(message: String) {
@@ -132,7 +139,10 @@ extension GistCommentViewController: GistCommentViewModelDelegate {
         
         labelUser.text = "User: \(gist.owner.login)"
         link.text = "Link: \(gist.html_url)"
-        labelCreatedAt.text = "Created at: \(gist.created_at)"
+        if let date = gist.created_at.dateFromISO8601 {
+            labelCreatedAt.text = "Created at: \(date)"
+        }
+        
         
         setupTitle(gist.id)
         setupActivityIndicator()
@@ -146,6 +156,7 @@ extension GistCommentViewController: GistCommentViewModelDelegate {
     func didSendComment() {
         setupActivityIndicator()
         presentAlert(message: "Comment successfully sent!")
+        setupLabelComment(viewModel?.gistCommentResponse?.body)
     }
     
     func errorSendingComment(_ error: String) {

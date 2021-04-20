@@ -1,11 +1,3 @@
-//
-//  QRCodeReaderViewController.swift
-//  Gist
-//
-//  Created by Thiago Lourin on 08/03/20.
-//  Copyright © 2020 Lourin. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 
@@ -20,6 +12,8 @@ class QRCodeReaderViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        
         #if targetEnvironment(simulator)
             promptForAnswer() /// Mark: example of gist id - 2710948
         #else
